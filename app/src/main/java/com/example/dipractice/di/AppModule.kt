@@ -31,7 +31,7 @@ object AppModule {
         )
         .build()
 
-
+    @Singleton
     @Provides
     fun provideMemeApi(retrofit: Retrofit):ApiInterface = retrofit.create(ApiInterface::class.java)
 
