@@ -20,7 +20,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMemeApi():ApiInterface = Retrofit.Builder()
+    fun provideRetrofitInstance():Retrofit = Retrofit.Builder()
         .baseUrl("https://api.imgflip.com/")
         .addConverterFactory(
             MoshiConverterFactory.create(
@@ -30,7 +30,10 @@ object AppModule {
             )
         )
         .build()
-        .create(ApiInterface::class.java)
+
+
+    @Provides
+    fun provideMemeApi(retrofit: Retrofit):ApiInterface = retrofit.create(ApiInterface::class.java)
 
 
 

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import java.lang.Exception
 
-class MemeRepository(
+class MemeRepository (
     private val api:ApiInterface
 ) {
 
